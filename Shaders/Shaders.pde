@@ -1,7 +1,10 @@
 import processing.video.*;
+//import gifAnimation.*;
+//GifMaker fichero;
 PShader dithering;
 PImage  source, noise;
 Capture cam;
+//int count=0;
 void setup() {
   
   size( 640,480, P2D );
@@ -13,6 +16,9 @@ void setup() {
   dithering=loadShader( "shaders1.glsl" );
   dithering.set("sketchSize", float(width), float(height));
   dithering.set("noiseTexture", noise);
+  //count=0;
+  //fichero= new GifMaker(this,"demo.gif");
+  //fichero.setRepeat(0);
 }
 
 
@@ -28,6 +34,11 @@ void draw() {
     cam.read();
     image( cam.copy(), 0, 0 );
   }
+  //count++;
+  //if(count>=10){
+  //  count=0;
+  //  fichero.addFrame();
+  //}
   
 
   
